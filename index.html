@@ -322,13 +322,10 @@
       </div>
      </div>
      <div class="flex gap-4"><span class="w-9 h-9 border border-[#B8964E] flex items-center justify-center text-[#B8964E]">☎</span>
-      <div><strong class="block">Phone / WhatsApp</strong><span class="text-white/60 text-sm">+91 98100 XXXXX</span>
+      <div><strong class="block">Phone / WhatsApp</strong><span class="text-white/60 text-sm">+91 6399021515</span>
       </div>
      </div>
-     <div class="flex gap-4"><span class="w-9 h-9 border border-[#B8964E] flex items-center justify-center text-[#B8964E]">⌖</span>
-      <div><strong class="block">Office</strong><span class="text-white/60 text-sm">101, Emaar Capital Tower, Sector 65, Gurugram – 122018</span>
-      </div>
-     </div>
+    
     </div>
    </div><!-- form -->
    <div x-data="{ formData: { fname:'', lname:'', email:'', phone:'', inquiry:'', message:'' }, submitted:false }" @submit.prevent="submitted=true; setTimeout(()=>submitted=false,3000); console.log(formData);">
@@ -348,7 +345,7 @@
      <div><label class="text-[10px] tracking-widest text-white/40">Tell Me More</label><textarea rows="3" x-model="formData.message" class="w-full bg-white/5 border border-white/10 p-3 text-sm focus:border-[#B8964E] outline-none" placeholder="Budget, city, timeline..."></textarea>
      </div><button type="submit" class="bg-[#B8964E] text-[#0E0D0B] py-3 px-10 text-xs tracking-widest font-semibold hover:bg-[#D4AF70] transition">Send Message</button>
      <div x-show="submitted" x-cloak class="text-[#D4AF70] text-sm mt-3">
-      ✓ Message sent (demo). Pankaj will respond within 24h.
+      ✓ Message sent . Pankaj will respond within 24h.
      </div>
     </form>
    </div>

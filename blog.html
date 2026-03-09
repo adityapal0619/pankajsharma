@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pankaj Sharma Real Estate Blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --gold: #C9A96E; --black: #000000; --white: #FFFFFF; }
+    body { background-color: var(--white); }
+    .fade-in { animation: fadeIn 0.5s ease-in; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .slide-up { animation: slideUp 0.6s ease-out; }
+    @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .card-hover { transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+    .card-hover:hover { transform: translateY(-12px); box-shadow: 0 25px 50px rgba(201, 169, 110, 0.15); }
+    .image-hover { transition: transform 0.4s ease; }
+    .card-hover:hover .image-hover { transform: scale(1.08); }
+    .gold-text { color: var(--gold); }
+    .gold-bg { background-color: var(--gold); }
+    .gold-border { border-color: var(--gold); }
+    .luxury-button { background-color: var(--gold); color: var(--black); font-weight: 600; transition: all 0.3s ease; }
+    .luxury-button:hover { background-color: #B8956A; transform: translateY(-2px); box-shadow: 0 10px 25px rgba(201, 169, 110, 0.3); }
+    .accent-line { height: 3px; background-color: var(--gold); }
+  </style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="/_sdk/element_sdk.js" type="text/javascript"></script>
+  <style>body { box-sizing: border-box; }</style>
+ </head>
+ <body class="bg-white min-h-screen"><!-- HEADER -->
+  <header class="bg-black text-white shadow-2xl">
+   <div class="accent-line"></div>
+   <div class="max-w-7xl mx-auto px-4 md:px-8 py-16 text-center">
+    <h1 class="text-5xl md:text-6xl font-black mb-2 tracking-tight">PANKAJ SHARMA</h1>
+    <div class="accent-line mx-auto w-20 mb-4"></div>
+    <p class="text-2xl md:text-3xl gold-text font-light tracking-wide">Real Estate Blog</p>
+    <p class="text-gray-400 mt-4 text-lg">Premium Properties • Expert Insights • Market Intelligence</p>
+   </div>
+  </header><!-- SEARCH & NAVIGATION SECTION -->
+  <div class="bg-black border-b-4 gold-border sticky top-0 z-40">
+   <div class="max-w-7xl mx-auto px-4 md:px-8 py-6">
+    <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+     <div class="flex-1 w-full md:w-auto"><input id="searchInput" type="text" placeholder="🔍 Search articles..." class="w-full px-6 py-3 border-2 gold-border rounded-lg bg-gray-900 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#C9A96E] transition duration-300">
+     </div><a href="adminblog.html" class="luxury-button py-3 px-8 rounded-lg transition shadow-lg hover:shadow-xl whitespace-nowrap"> ⚙️ Publish Post </a>
+    </div>
+   </div>
+  </div><!-- MAIN CONTENT -->
+  <main class="max-w-7xl mx-auto px-4 md:px-8 py-16"><!-- FEATURED ARTICLE SECTION -->
+   <div id="featuredContainer" class="mb-20"></div><!-- BLOG GRID SECTION -->
+   <section>
+    <div class="mb-12">
+     <h2 class="text-4xl md:text-5xl font-black text-black mb-2">LATEST ARTICLES</h2>
+     <div class="accent-line w-32"></div>
+    </div>
+    <div id="blogsList" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+     <div class="col-span-full text-center py-24">
+      <p class="text-gray-500 text-xl">✨ No articles available yet. Check back soon!</p>
+     </div>
+    </div>
+   </section>
+  </main>
+  <!-- FOOTER -->
+  <footer class="bg-black text-white mt-20 border-t-4 gold-border">
+<div class="max-w-7xl mx-auto px-4 md:px-8 py-16">
+
+<div class="flex flex-col md:flex-row justify-between gap-12 mb-12">
+
+<div>
+<h3 class="text-2xl font-black gold-text mb-4">PANKAJ SHARMA</h3>
+<p class="text-gray-400 leading-relaxed">
+Premium real estate expertise with a focus on luxury properties and strategic market investments.
+</p>
+</div>
+
+<div class="text-right">
+<h4 class="font-black gold-text mb-6 uppercase tracking-wide">Quick Links</h4>
+
+<ul class="space-y-3 text-gray-400">
+<li><a href="index.html" class="hover:gold-text transition">Home</a></li>
+<li><a href="index.html" class="hover:gold-text transition">Contact</a></li>
+</ul>
+
+</div>
+
+</div>
+
+<div class="border-t gold-border pt-8 text-center text-gray-500">
+<p>© 2024 Pankaj Sharma Real Estate. All rights reserved.</p>
+</div>
+
+</div>
+</footer>
+  <script>
+  let allBlogs = [];
+  let filteredBlogs = [];
+
+  // Initialize with sample articles
+  function initializeSampleBlogs() {
+   const sampleBlogs = [
+    {
+     title: "Why 2024 Is the Best Time to Invest in Real Estate",
+     image: "https://images.unsplash.com/photo-1453227427063-bf1b8fad6b40?w=800&h=600&fit=crop",
+     content: "The real estate market is experiencing unprecedented opportunities for savvy investors. With interest rates stabilizing and property values appreciating, 2024 presents a golden window for portfolio expansion. Market analysis shows a 12% appreciation in premium properties over the last year, with further growth projected. First-time buyers are finding favorable conditions with more flexible financing options. The luxury segment continues to outperform traditional markets. Strategic location selection remains paramount for long-term returns. Properties in emerging neighborhoods offer exceptional value propositions. Commercial real estate is rebounding strongly post-pandemic. Mixed-use developments are becoming increasingly popular. Investors should consider diversifying across residential, commercial, and industrial segments for optimal portfolio balance.",
+     date: "Jan 15, 2024"
+    },
+    {
+     title: "Top 5 Luxury Neighborhoods in the City",
+     image: "https://images.unsplash.com/photo-1512917774080-9b274b0f4c90?w=800&h=600&fit=crop",
+     content: "Luxury real estate is concentrated in specific neighborhoods that offer unparalleled amenities and prestige. The financial district remains the most coveted area for high-net-worth individuals seeking urban convenience with luxury living. Waterfront properties command premium prices due to scenic views and exclusive access. Central Park vicinity properties are perennially sought after by international buyers. Historic neighborhoods blending classic architecture with modern amenities attract discerning buyers. Emerging luxury zones offer excellent investment opportunities at competitive prices. Each neighborhood has distinct characteristics appealing to different buyer profiles. Proximity to fine dining, cultural institutions, and entertainment venues adds significant value. Security and privacy considerations are paramount in luxury property selection. Community infrastructure and property maintenance standards define neighborhood prestige.",
+     date: "Jan 10, 2024"
+    },
+    {
+     title: "Market Trends: What Real Estate Professionals Should Know",
+     image: "https://images.unsplash.com/photo-1460925895917-adf4ee868993?w=800&h=600&fit=crop",
+     content: "Current market dynamics reflect several key trends shaping the real estate landscape. Digital transformation is revolutionizing property viewings through virtual tours and AI-powered recommendations. Sustainable and eco-friendly properties are commanding premium valuations. Remote work adoption is reshaping residential preferences away from urban centers. Gen Z buyers prioritize sustainability and smart home technology. Property management software is becoming increasingly sophisticated with blockchain integration. Commercial real estate is undergoing transformation with hybrid work models. Mega-trends include urbanization in tier-2 cities and rural-to-suburban migration patterns. Investment in real estate technology continues to surge with significant venture capital inflows. Data analytics now plays a crucial role in property valuation and market prediction. Professional real estate agents must embrace technology to remain competitive.",
+     date: "Jan 5, 2024"
+    },
+    {
+     title: "Complete Guide to Property Investment Returns",
+     image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
+     content: "Understanding property investment returns requires comprehensive analysis of multiple financial metrics. Capital appreciation remains the primary driver of long-term wealth creation in real estate. Rental yield calculations should account for all operational costs and vacancy rates. Tax-advantaged investment strategies can significantly enhance net returns. Leverage amplifies returns but requires careful debt management and risk assessment. Property depreciation deductions provide substantial tax benefits for investors. Location-based appreciation rates vary significantly across markets and neighborhoods. Time horizon impacts investment strategy selection considerably. Diversification across property types reduces portfolio risk substantially. Professional property management ensures optimal rental income and tenant quality. Market cycles create entry and exit opportunities for tactical investors.",
+     date: "Dec 28, 2023"
+    },
+    {
+     title: "How to Prepare Your Home for Sale Successfully",
+     image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&h=600&fit=crop",
+     content: "Selling a property requires strategic preparation to maximize sale price and minimize time on market. Professional staging dramatically improves buyer perception and property appeal. High-quality photography and videography are essential in today's digital-first market. Curb appeal significantly influences buyer first impressions and offering decisions. Interior design improvements should focus on neutral aesthetics appealing to broad audiences. Minor repairs and maintenance upgrades yield exceptional return on investment. Professional inspection reports build buyer confidence and facilitate smooth transactions. Strategic pricing based on comparable market analysis is critical for success. Marketing across multiple channels ensures maximum property exposure to qualified buyers. Professional real estate agents provide invaluable expertise in selling strategy and negotiation.",
+     date: "Dec 20, 2023"
+    }
+   ];
+
+   // Only add if no blogs exist
+   if (!localStorage.getItem("blogs")) {
+    localStorage.setItem("blogs", JSON.stringify(sampleBlogs));
+   }
+  }
+
+  // Load all blogs from localStorage
+  function loadBlogs() {
+   initializeSampleBlogs();
+   allBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+   filteredBlogs = [...allBlogs].reverse();
+   renderFeatured();
+   renderBlogsList();
+  }
+
+  // Render featured article (latest blog)
+  function renderFeatured() {
+   const container = document.getElementById("featuredContainer");
+   
+   if (allBlogs.length === 0) {
+    container.innerHTML = "";
+    return;
+   }
+
+   const featured = allBlogs[allBlogs.length - 1];
+   const excerpt = featured.content.substring(0, 150) + (featured.content.length > 150 ? "..." : "");
+
+   container.innerHTML = `
+    <div class="bg-black border-4 gold-border rounded-lg overflow-hidden shadow-2xl mb-20">
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-8 md:p-12">
+      <div class="flex flex-col justify-center text-white">
+       <span class="text-sm font-black uppercase tracking-widest gold-text mb-3">✨ Featured Article</span>
+       <h2 class="text-4xl md:text-5xl font-black mb-4 leading-tight">${featured.title}</h2>
+       <p class="text-lg text-gray-300 mb-6 leading-relaxed">${excerpt}</p>
+       <div class="flex items-center gap-6">
+        <button class="luxury-button py-3 px-8 rounded-lg transition" onclick="readFullBlog(${allBlogs.length - 1})">
+         Read Full Article →
+        </button>
+        <p class="text-gray-400 text-sm">📅 ${featured.date || new Date().toLocaleDateString()}</p>
+       </div>
+      </div>
+      <div class="hidden md:flex items-center justify-center">
+       <img src="${featured.image}" alt="${featured.title}" class="w-full h-80 object-cover rounded-lg border-2 gold-border" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Crect fill=%22%23222%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2224%22 fill=%22%23C9A96E%22%3EImage Unavailable%3C/text%3E%3C/svg%3E'">
+      </div>
+     </div>
+    </div>
+   `;
+  }
+
+  // Render blog grid
+  function renderBlogsList() {
+   const container = document.getElementById("blogsList");
+   
+   if (filteredBlogs.length === 0) {
+    container.innerHTML = '<div class="col-span-full text-center py-24"><p class="text-gray-500 text-xl">✨ No articles found.</p></div>';
+    return;
+   }
+
+   let html = "";
+   
+   // Skip featured article (last one) in the grid
+   const blogsToDisplay = filteredBlogs.slice(0, -1).length > 0 ? filteredBlogs.slice(0, -1) : filteredBlogs;
+
+   blogsToDisplay.forEach((blog, index) => {
+    const originalIndex = allBlogs.findIndex(b => b.title === blog.title && b.content === blog.content);
+    const excerpt = blog.content.substring(0, 120) + (blog.content.length > 120 ? "..." : "");
+    
+    html += `
+     <article class="bg-white border-2 gold-border rounded-lg overflow-hidden shadow-lg card-hover">
+      <div class="relative h-56 overflow-hidden bg-gray-200">
+       <img src="${blog.image}" alt="${blog.title}" class="w-full h-full object-cover image-hover" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22%3E%3Crect fill=%22%23e5e7eb%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2220%22 fill=%22%239ca3af%22%3EImage Not Found%3C/text%3E%3C/svg%3E'">
+      </div>
+      <div class="p-6">
+       <p class="text-sm font-black gold-text uppercase tracking-wide mb-3">📰 REAL ESTATE</p>
+       <h3 class="text-2xl font-black text-black mb-3 line-clamp-2 hover:gold-text transition">${blog.title}</h3>
+       <p class="text-gray-700 text-base mb-4 line-clamp-3 leading-relaxed">${excerpt}</p>
+       <div class="flex items-center justify-between pt-4 border-t-2 gold-border">
+        <span class="text-sm text-gray-600 font-semibold">📅 ${blog.date || new Date().toLocaleDateString()}</span>
+        <button onclick="readFullBlog(${originalIndex})" class="gold-text hover:gold-bg hover:text-black px-4 py-2 rounded-lg font-bold transition duration-300">
+         Read More →
+        </button>
+       </div>
+      </div>
+     </article>
+    `;
+   });
+
+   container.innerHTML = html;
+  }
+
+  // Read full blog (modal preview)
+  function readFullBlog(index) {
+   const blog = allBlogs[index];
+   const modal = document.createElement("div");
+   modal.className = "fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4 slide-up";
+   modal.innerHTML = `
+    <div class="bg-white rounded-lg max-w-2xl w-full max-h-96 overflow-y-auto shadow-2xl">
+     <div class="sticky top-0 bg-black text-white border-b-4 gold-border p-6 flex justify-between items-start">
+      <h2 class="text-3xl font-black pr-4">${blog.title}</h2>
+      <button onclick="this.closest('.slide-up').remove()" class="text-gold hover:text-white text-3xl font-bold flex-shrink-0">×</button>
+     </div>
+     <img src="${blog.image}" alt="${blog.title}" class="w-full h-64 object-cover" onerror="this.style.display='none'">
+     <div class="p-8">
+      <p class="text-gray-600 mb-4 font-semibold">📅 ${blog.date || new Date().toLocaleDateString()}</p>
+      <div class="text-gray-800 leading-relaxed whitespace-pre-wrap">${blog.content}</div>
+     </div>
+    </div>
+   `;
+   document.body.appendChild(modal);
+   modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.remove();
+   });
+  }
+
+  // Search functionality
+  document.addEventListener("DOMContentLoaded", () => {
+   loadBlogs();
+   
+   const searchInput = document.getElementById("searchInput");
+   if (searchInput) {
+    searchInput.addEventListener("input", (e) => {
+     const query = e.target.value.toLowerCase();
+     filteredBlogs = allBlogs.reverse().filter(blog => 
+      blog.title.toLowerCase().includes(query) || 
+      blog.content.toLowerCase().includes(query)
+     );
+     renderBlogsList();
+    });
+   }
+  });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d99c6c0a3747f16',t:'MTc3MzA1NjEyOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
